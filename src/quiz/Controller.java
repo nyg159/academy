@@ -1,5 +1,9 @@
 package quiz;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -85,30 +89,48 @@ public class Controller {
         System.out.println();
     }
 
-    void saveInfo(){
+    void saveInfo() throws IOException {
         // 5. 학생 정보 저장
         // -> 리스트에 저장된 데이터들을 파일로 저장
-
-
-
-
+        FileWriter fileWriter = new FileWriter("학생점수.txt");
+        for (int i = 0; i < linkedList.size(); i++) {
+            fileWriter.write(linkedList.get(i).toString()+"\n");
+            System.out.println(linkedList.get(i).toString());
+        }
+        fileWriter.close();
         System.out.println();
     }
 
-    void loadFile(){
+    void loadFile() throws IOException {
         // 6. 파일 불러오기
         // -> 저장된 파일을 불러와서 콘솔에 출력해준다.
+        File file = new File("학생점수.txt");
+        if (file.isFile()) {
+            Scanner fileScan = new Scanner(file);
 
+            String scanName;
+            int scanKor, scanEng, scanMat;
 
+            while (fileScan.hasNext()) {
+                scanName = fileScan.next();
+                scanKor = fileScan.nextInt();
+                scanEng = fileScan.nextInt();
+                scanMat = fileScan.nextInt();
 
+                System.out.println("이름 : " + scanName);
+                System.out.printf("성적 : 국 %d 영 %d 수 %d ", scanKor,scanEng,scanMat);
+            }
 
+        }else {
+            System.out.println("파일이 존재하지 않습니다.");
+        }
         System.out.println();
     }
 
 
 
 
-    public void run() {
+    public void run() throws IOException {
         int menu;
 
         do {

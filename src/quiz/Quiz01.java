@@ -7,8 +7,10 @@ package quiz;
         
  */
 
+import java.io.IOException;
+
 public class Quiz01 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Controller controller = new Controller();
 
         controller.run();
