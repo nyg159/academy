@@ -57,15 +57,18 @@ public class Controller {
             }
         }
 
-        System.out.print("수정된 학생 정보를 입력하세요 (이름, 국,영,수) : ");
-        String modifyName = scanner.next();
-        int modifyKor = scanner.nextInt();
-        int modifyEng = scanner.nextInt();
-        int modifyMat = scanner.nextInt();
+        if (index == -1) {
+            System.out.println("해당 학생을 찾을 수 없습니다.");
+        }else {
+            System.out.print("수정된 학생 정보를 입력하세요 (이름, 국,영,수) : ");
+            String modifyName = scanner.next();
+            int modifyKor = scanner.nextInt();
+            int modifyEng = scanner.nextInt();
+            int modifyMat = scanner.nextInt();
 
-        linkedList.set(index,(new Student(modifyName,modifyKor,modifyEng,modifyMat)));
-        System.out.println("수정된 학생 : "+linkedList.get(index));
-
+            linkedList.set(index,(new Student(modifyName,modifyKor,modifyEng,modifyMat)));
+            System.out.println("수정된 학생 : "+linkedList.get(index));
+        }
         System.out.println();
     }
     
