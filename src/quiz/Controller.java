@@ -13,9 +13,6 @@ public class Controller {
 
     private String msg = "이름 : %s 국 %d 영 %d 수 %d";
 
-    void hi(){
-        System.out.println("hu");
-    }
 
     public void listRun(){
         // 1.학생 목록 리스트 출력
