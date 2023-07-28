@@ -1,6 +1,5 @@
-package testJava;
+package ac7week3.ac0727.testJava;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 

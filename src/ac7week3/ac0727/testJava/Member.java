@@ -1,4 +1,4 @@
-package testJava;
+package ac7week3.ac0727.testJava;
 
 class Member {
     String id,pw,name;
