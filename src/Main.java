@@ -2,29 +2,22 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        if (a >= 1 && a <= 100) {
+            for (int j = 0; j < a; j++) {
+                for (int i = 0; i < a - j - 1; i++) {
+                    System.out.print(" ");
+                }
 
-        int T = sc.nextInt();
-        int[] num = new int[T];
-        int[] numA = new int[T];
-        int[] numB = new int[T];
+                for (int k = 0; k <= j; k++) {
+                    System.out.print("*");
+                }
+                System.out.println();
 
-
-        for (int i = 0; i < T; i++) {
-            int A = sc.nextInt();
-
-            int B = sc.nextInt();
-
-            if (A > 0 && A < 10 && B > 0 && B < 10) {
-                numA[i] = A;
-                numB[i] = B;
-                num[i] = A + B;
             }
+
         }
 
-        for (int a = 0; a < T; a++) {
-            int x = a + 1;
-            System.out.println("Case #" + x + ": "+numA[a] +" + "+numB[a]+" = " + num[a]);
-        }
     }
 }
