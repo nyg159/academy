@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Quiz01Client {
     public static void main(String[] args) throws IOException {
-        Socket socket = new Socket("localhost", 10004);
+        Socket socket = new Socket("192.168.113.12", 10004);
         System.out.println("서버에 연결됨");
 
         PrintWriter outputPrintWriter = new PrintWriter(socket.getOutputStream(), true);
@@ -25,8 +25,6 @@ public class Quiz01Client {
                 outputPrintWriter.println(msg);
 
             } while (!"0".equals(msg));
-
-
 
         });
 
